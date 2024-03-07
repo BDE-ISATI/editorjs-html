@@ -96,16 +96,7 @@ const transforms: transforms = {
   },
 
   embed: ({ data }) => {
-    switch (data.service) {
-      case "vimeo":
-        return `<iframe src="${data.embed}" height="${data.height}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>`;
-      case "youtube":
-        return `<iframe width="${data.width}" height="${data.height}" src="${data.embed}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-      default:
-        throw new Error(
-          "Only Youtube and Vime Embeds are supported right now."
-        );
-    }
+    return `<iframe width="${data.width}" height="${data.height}" frameborder="0" src="${data.embed}" allowfullscreen></iframe>`
   },
 };
 
